@@ -12,18 +12,19 @@ public class Word {
     private static final int NO_IMAGE_PROVIDED = -1;
     private int mAudioResourceId;
 
-    public Word(String English, String Farsi, int audioResourceId) {
-        mEnglishTranslation = English;
-        mFarsiTranslation = Farsi;
-        mAudioResourceId = audioResourceId;
-    }
 
-    public Word(String English, String Farsi, int ImageResourceId, int audioResourceId) {
+    public Word(String English, String Farsi, int ImageResourceId) {
         mEnglishTranslation = English;
         mFarsiTranslation = Farsi;
         mImageResourceId = ImageResourceId;
-        mAudioResourceId = audioResourceId;
+    }
+    public Word(){
 
+    }
+
+    public Word(String English, String Farsi) {
+        mEnglishTranslation = English;
+        mFarsiTranslation = Farsi;
     }
 
     public int getImageResourceId() {

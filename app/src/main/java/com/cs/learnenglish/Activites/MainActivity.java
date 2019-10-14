@@ -1,7 +1,7 @@
 package com.cs.learnenglish.Activites;
 
-import android.content.Context;
 import android.content.Intent;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.cs.learnenglish.R;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     GridLayout gridLayout;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         gridLayout=(GridLayout)findViewById(R.id.mainGrid);
 
@@ -40,19 +44,16 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                             break;
                         case 1:
-                            /*Intent intent1 = new Intent(MainActivity.this, AlphabetActivity.class);
-                            startActivity(intent1);*/
-                            Toast.makeText(MainActivity.this, "Numbers", Toast.LENGTH_SHORT).show();
+                            Intent intent1 = new Intent(MainActivity.this, NumbersActivity.class);
+                            startActivity(intent1);
                             break;
                         case 2:
-                            /*Intent intent2 = new Intent(MainActivity.this, AlphabetActivity.class);
-                            startActivity(intent2);*/
-                            Toast.makeText(MainActivity.this, "Family Members", Toast.LENGTH_SHORT).show();
+                            Intent intent2 = new Intent(MainActivity.this, FamilyMembers.class);
+                            startActivity(intent2);
                             break;
                         case 3:
-                            /*Intent intent3 = new Intent(MainActivity.this, AlphabetActivity.class);
-                            startActivity(intent3);*/
-                            Toast.makeText(MainActivity.this, "Colors", Toast.LENGTH_SHORT).show();
+                            Intent intent3 = new Intent(MainActivity.this, ColorsActivity.class);
+                            startActivity(intent3);
                             break;
                         case 4:
                             /*Intent intent4 = new Intent(MainActivity.this, AlphabetActivity.class);

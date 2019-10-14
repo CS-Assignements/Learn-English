@@ -3,7 +3,6 @@ package com.cs.learnenglish.Activites;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.provider.ContactsContract;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.cs.learnenglish.Adapters.CustomRVItemTouchListener;
 import com.cs.learnenglish.Adapters.Recycler_View_Adapter;
@@ -23,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class AlphabetActivity extends AppCompatActivity {
+public class AnimalsActivity extends AppCompatActivity {
 
 
     MediaPlayer mediaPlayer;
@@ -99,7 +97,6 @@ public class AlphabetActivity extends AppCompatActivity {
         words.add(new Word("Zoo", "باغ وحش", R.drawable.z));
         List<Word> data = words;
 
-
         final ArrayList<String> textstospeech = new ArrayList<>();
         textstospeech.add("A,Like,Apple");
         textstospeech.add("B,Like,Ball");
@@ -127,7 +124,6 @@ public class AlphabetActivity extends AppCompatActivity {
         textstospeech.add("X,Like,box");
         textstospeech.add("Y,Like,yellow");
         textstospeech.add("Z,Like,zoo");
-
 
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);

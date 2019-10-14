@@ -16,11 +16,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activites.AlphabetActivity"
-            android:theme="@style/AppTheme2"
+        <activity
+            android:name=".Activites.AlphabetActivity"
             android:label="Alphabet"
             android:parentActivityName=".Activites.MainActivity"
-            />
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Activites.NumbersActivity"
+            android:label="Numbers"
+            android:parentActivityName=".Activites.MainActivity"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".Activites.ColorsActivity"
+            android:parentActivityName=".Activites.MainActivity"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".Activites.FamilyMembers"
+            android:parentActivityName=".Activites.MainActivity"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".Activites.AnimalsActivity"
+            android:parentActivityName=".Activites.MainActivity"
+            android:theme="@style/AppTheme2"/>
     </application>
 
 </manifest>
