@@ -22,9 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        gridLayout=(GridLayout)findViewById(R.id.mainGrid);
+        gridLayout=findViewById(R.id.mainGrid);
 
         setSingleEvent(gridLayout);
 
@@ -56,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent3);
                             break;
                         case 4:
-                            /*Intent intent4 = new Intent(MainActivity.this, AlphabetActivity.class);
-                            startActivity(intent4);*/
-                            Toast.makeText(MainActivity.this, "Animals", Toast.LENGTH_SHORT).show();
+                            Intent intent4 = new Intent(MainActivity.this, AnimalsActivity.class);
+                            startActivity(intent4);
                             break;
                         case 5:
                             /*Intent intent5 = new Intent(MainActivity.this, AlphabetActivity.class);

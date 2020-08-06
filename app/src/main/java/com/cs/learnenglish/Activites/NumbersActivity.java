@@ -23,7 +23,6 @@ import java.util.Locale;
 
 public class NumbersActivity extends AppCompatActivity {
 
-
     MediaPlayer mediaPlayer;
     AudioManager audioManager;
     TextToSpeech textToSpeech;
@@ -67,7 +66,7 @@ public class NumbersActivity extends AppCompatActivity {
             }
         });
 
-        final ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("One", "یک", R.drawable.one));
         words.add(new Word("Two", "دو", R.drawable.two));
         words.add(new Word("Three", "سه", R.drawable.three));
@@ -81,20 +80,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         List<Word> data = words;
 
-        final ArrayList<String> textstospeech = new ArrayList<>();
-        textstospeech.add("One");
-        textstospeech.add("Two");
-        textstospeech.add("Three");
-        textstospeech.add("Four");
-        textstospeech.add("Five");
-        textstospeech.add("Six");
-        textstospeech.add("Seven");
-        textstospeech.add("Eight");
-        textstospeech.add("Nine");
-        textstospeech.add("Ten");
-
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
         Recycler_View_Adapter adapter = new Recycler_View_Adapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -103,7 +89,7 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 Word word = words.get(position);
-                textToSpeech.speak(textstospeech.get(position), TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(words.get(position).getmEnglishTranslation(), TextToSpeech.QUEUE_FLUSH, null);
 
                 releaseMediaPlayer();
 

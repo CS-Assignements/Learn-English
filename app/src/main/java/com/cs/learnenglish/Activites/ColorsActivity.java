@@ -54,7 +54,12 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_layout);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        try {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
+
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         textToSpeech=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -67,7 +72,7 @@ public class ColorsActivity extends AppCompatActivity {
         });
 
 
-        final ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("Black", "سیاه", R.drawable.black));
         words.add(new Word("White", "سفید", R.drawable.white));
         words.add(new Word("Red", "سرخ", R.drawable.red));
@@ -82,22 +87,7 @@ public class ColorsActivity extends AppCompatActivity {
 
         List<Word> data = words;
 
-        Word word = new Word();
-        final ArrayList<String> textstospeech = new ArrayList<>();
-        textstospeech.add("Black");
-        textstospeech.add("White");
-        textstospeech.add("Red");
-        textstospeech.add("Blue");
-        textstospeech.add("Yellow");
-        textstospeech.add("Brown");
-        textstospeech.add("Green");
-        textstospeech.add("Grey");
-        textstospeech.add("Pink");
-        textstospeech.add("Purple");
-        textstospeech.add("Orange");
-
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
         Recycler_View_Adapter adapter = new Recycler_View_Adapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -106,7 +96,7 @@ public class ColorsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 Word word = words.get(position);
-                textToSpeech.speak(textstospeech.get(position), TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(words.get(position).getmEnglishTranslation(), TextToSpeech.QUEUE_FLUSH, null);
 
                 releaseMediaPlayer();
 

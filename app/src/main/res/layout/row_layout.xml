@@ -12,15 +12,6 @@
     app:cardElevation="10dp">
 
 
-    <!--<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/imageView"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/question_sign"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp" />-->
 
     <LinearLayout
         android:id="@+id/text_container"
@@ -34,7 +25,8 @@
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/question_sign" />
+            android:src="@drawable/question_sign"
+            android:contentDescription="@string/image_for_the_text"/>
 
         <View
             android:id="@+id/line"
@@ -42,14 +34,11 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/imageView"
             android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/line"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -57,11 +46,9 @@
                 android:id="@+id/english_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/imageView"
                 android:layout_weight="1"
-                android:paddingLeft="15dp"
-                android:text="English"
+                android:paddingStart="15dp"
+                android:text="@string/english"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -69,12 +56,10 @@
                 android:id="@+id/farsi_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/english_text_view"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:paddingRight="15dp"
-                android:text="Farsi"
+                android:paddingEnd="15dp"
+                android:text="@string/farsi"
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>

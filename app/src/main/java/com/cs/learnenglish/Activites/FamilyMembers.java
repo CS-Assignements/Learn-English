@@ -68,7 +68,7 @@ public class FamilyMembers extends AppCompatActivity {
         });
 
 
-        final ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("Father", "پدر", R.drawable.father));
         words.add(new Word("Mother", "مادر", R.drawable.mother));
         words.add(new Word("Grandpa", "پدر بزرگ", R.drawable.grandpa));
@@ -89,27 +89,7 @@ public class FamilyMembers extends AppCompatActivity {
 
         List<Word> data = words;
 
-        final ArrayList<String> textstospeech = new ArrayList<>();
-        textstospeech.add("Father");
-        textstospeech.add("Mother");
-        textstospeech.add("Grandpa");
-        textstospeech.add("Grandma");
-        textstospeech.add("Brother");
-        textstospeech.add("Sister");
-        textstospeech.add("Son");
-        textstospeech.add("Daughter");
-        textstospeech.add("Uncle");
-        textstospeech.add("Aunt");
-        textstospeech.add("Nephew");
-        textstospeech.add("Wife");
-        textstospeech.add("Husband");
-        textstospeech.add("Father in law");
-        textstospeech.add("Mother in law");
-        textstospeech.add("Brother in law");
-        textstospeech.add("Sister in law");
-
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
         Recycler_View_Adapter adapter = new Recycler_View_Adapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -118,7 +98,7 @@ public class FamilyMembers extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 Word word = words.get(position);
-                textToSpeech.speak(textstospeech.get(position), TextToSpeech.QUEUE_FLUSH, null);
+                textToSpeech.speak(words.get(position).getmEnglishTranslation(), TextToSpeech.QUEUE_FLUSH, null);
 
                 releaseMediaPlayer();
 

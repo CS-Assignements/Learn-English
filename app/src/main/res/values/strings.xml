@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Learn English</string>
+    <string name="image_for_the_text">Image For the text</string>
+    <string name="english">English</string>
+    <string name="farsi">Farsi</string>
+    <string name="alphabet">Alphabet</string>
+    <string name="activity_image">activity Image</string>
+    <string name="numbers">Numbers</string>
+    <string name="family_members">Family Members</string>
+    <string name="colors">Colors</string>
+    <string name="animals">Animals</string>
+    <string name="phrases">Phrases</string>
 </resources>
