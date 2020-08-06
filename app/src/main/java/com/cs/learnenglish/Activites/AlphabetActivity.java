@@ -3,7 +3,6 @@ package com.cs.learnenglish.Activites;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.provider.ContactsContract;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +10,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.cs.learnenglish.Adapters.CustomRVItemTouchListener;
-import com.cs.learnenglish.Adapters.Recycler_View_Adapter;
+import com.cs.learnenglish.Adapters.Recycler_Adapter;
 import com.cs.learnenglish.Interfaces.RecyclerViewItemClickListener;
 import com.cs.learnenglish.R;
 import com.cs.learnenglish.Word;
@@ -101,7 +99,7 @@ public class AlphabetActivity extends AppCompatActivity {
 
 
         RecyclerView recyclerView =  findViewById(R.id.recyclerview);
-        Recycler_View_Adapter adapter = new Recycler_View_Adapter(data, getApplication());
+        Recycler_Adapter adapter = new Recycler_Adapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

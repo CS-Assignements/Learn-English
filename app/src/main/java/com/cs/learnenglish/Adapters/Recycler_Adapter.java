@@ -20,11 +20,11 @@ import java.util.List;
 /**
  * Created by Qais Rasuli on 9/17/2019.
  */
-public class Recycler_View_Adapter extends RecyclerView.Adapter<View_Holder>{
+public class Recycler_Adapter extends RecyclerView.Adapter<View_Holder>{
     private List<Word> list;
     private Context context;
 
-    public Recycler_View_Adapter(List<Word> list, Context context) {
+    public Recycler_Adapter(List<Word> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -32,7 +32,6 @@ public class Recycler_View_Adapter extends RecyclerView.Adapter<View_Holder>{
     @Override
     public View_Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         //Inflate the layout, initialize the View Holder
-
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
         return new View_Holder(v);
 
@@ -46,6 +45,7 @@ public class Recycler_View_Adapter extends RecyclerView.Adapter<View_Holder>{
         holder.farsi.setText(list.get(position).getmFarsiTranslation());
         holder.imageView.setImageResource(list.get(position).getImageResourceId());
         //animate(holder);
+
     }
 
     @Override
@@ -78,7 +78,7 @@ class View_Holder extends RecyclerView.ViewHolder {
 
      CardView cv;
      TextView english;
-     TextView farsi;
+     TextView farsi ;
      ImageView imageView;
 
     View_Holder(View itemView) {

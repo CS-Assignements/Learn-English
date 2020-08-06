@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.cs.learnenglish.Adapters.CustomRVItemTouchListener;
-import com.cs.learnenglish.Adapters.Recycler_View_Adapter_NoImage;
+import com.cs.learnenglish.Adapters.Recycler_Adapter_NoImage;
 import com.cs.learnenglish.Interfaces.RecyclerViewItemClickListener;
 import com.cs.learnenglish.R;
 import com.cs.learnenglish.Word;
@@ -78,7 +78,7 @@ public class AnimalsActivity extends AppCompatActivity {
         words.add(new Word("Zebra", "گوره خر"));
         words.add(new Word("Gorilla", "گوریل"));
         words.add(new Word("Monkey", "میمون"));
-        words.add(new Word("Girrafe", "زرافه"));
+        words.add(new Word("Giraffe", "زرافه"));
         words.add(new Word("Horse", "اسپ"));
         words.add(new Word("Donkey", "خر"));
 
@@ -87,7 +87,7 @@ public class AnimalsActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
 
-        Recycler_View_Adapter_NoImage adapter = new Recycler_View_Adapter_NoImage(data, getApplication());
+        Recycler_Adapter_NoImage adapter = new Recycler_Adapter_NoImage(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

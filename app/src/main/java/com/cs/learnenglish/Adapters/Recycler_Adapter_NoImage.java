@@ -18,11 +18,11 @@ import java.util.List;
 /**
  * Created by Qais Rasuli on 9/17/2019.
  */
-public class Recycler_View_Adapter_NoImage extends RecyclerView.Adapter<View_Holder2>{
+public class Recycler_Adapter_NoImage extends RecyclerView.Adapter<View_Holder2>{
     private List<Word> list ;
     private Context context;
 
-    public Recycler_View_Adapter_NoImage(List<Word> list, Context context) {
+    public Recycler_Adapter_NoImage(List<Word> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -43,6 +43,8 @@ public class Recycler_View_Adapter_NoImage extends RecyclerView.Adapter<View_Hol
         holder.english.setText(list.get(position).getmEnglishTranslation());
         holder.farsi.setText(list.get(position).getmFarsiTranslation());
         //animate(holder);
+        //setting the position of item plus 1 as number of the word
+        holder.counter.setText(Integer.toString( position +1));
     }
 
     @Override
@@ -75,13 +77,13 @@ class View_Holder2 extends RecyclerView.ViewHolder {
 
     CardView cv;
     TextView english;
-    TextView farsi;
+    TextView farsi , counter;
 
     View_Holder2(View itemView) {
         super(itemView);
         cv = itemView.findViewById(R.id.cardView);
         english = itemView.findViewById(R.id.english_text_view);
         farsi =  itemView.findViewById(R.id.farsi_text_view);
-
+        counter = itemView.findViewById(R.id.counter);
     }
 }

@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.cs.learnenglish.Adapters.CustomRVItemTouchListener;
-import com.cs.learnenglish.Adapters.Recycler_View_Adapter;
+import com.cs.learnenglish.Adapters.Recycler_Adapter;
 import com.cs.learnenglish.Interfaces.RecyclerViewItemClickListener;
 import com.cs.learnenglish.R;
 import com.cs.learnenglish.Word;
@@ -81,7 +81,7 @@ public class NumbersActivity extends AppCompatActivity {
         List<Word> data = words;
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        Recycler_View_Adapter adapter = new Recycler_View_Adapter(data, getApplication());
+        Recycler_Adapter adapter = new Recycler_Adapter(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

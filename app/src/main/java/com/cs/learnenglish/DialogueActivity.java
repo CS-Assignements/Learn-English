@@ -1,4 +1,4 @@
-package com.cs.learnenglish.Activites;
+package com.cs.learnenglish;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -12,16 +12,15 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.cs.learnenglish.Adapters.CustomRVItemTouchListener;
-import com.cs.learnenglish.Adapters.Recycler_Adapter;
+import com.cs.learnenglish.Adapters.Recycler_Adapter_NoImage;
 import com.cs.learnenglish.Interfaces.RecyclerViewItemClickListener;
-import com.cs.learnenglish.R;
-import com.cs.learnenglish.Word;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class ColorsActivity extends AppCompatActivity {
+public class DialogueActivity extends AppCompatActivity {
+
 
     MediaPlayer mediaPlayer;
     AudioManager audioManager;
@@ -54,12 +53,7 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_layout);
-        try {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }catch (NullPointerException e){
-            e.printStackTrace();
-        }
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         textToSpeech=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -73,22 +67,23 @@ public class ColorsActivity extends AppCompatActivity {
 
 
         final ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word("Black", "سیاه", R.drawable.black));
-        words.add(new Word("White", "سفید", R.drawable.white));
-        words.add(new Word("Red", "سرخ", R.drawable.red));
-        words.add(new Word("Blue", "آبی", R.drawable.blue));
-        words.add(new Word("Yellow", "زرد", R.drawable.yellow));
-        words.add(new Word("Brown", "قهوه ای", R.drawable.brown));
-        words.add(new Word("Green", "سبز", R.drawable.green));
-        words.add(new Word("Grey", "خاکستری", R.drawable.grey));
-        words.add(new Word("Pink", "گلابی", R.drawable.pink));
-        words.add(new Word("Purple", "بنفش", R.drawable.purple));
-        words.add(new Word("Orange", "نارنجی", R.drawable.orange));
-
+        words.add(new Word("What is your name?", "نام شما چیست؟"));
+        words.add(new Word("My name is Simaye", "نام من سیمای است"));
+        words.add(new Word("What is your last name?", "تخلص شما چیست؟"));
+        words.add(new Word("My last name is Noor", "تخلص من نور است"));
+        words.add(new Word("What is your father's name?", "نام پدر شما چیست؟"));
+        words.add(new Word("My father's name is Ahmad", "نام پدر من احمد است"));
+        words.add(new Word("How old are you?", "شما چند ساله هستید؟"));
+        words.add(new Word("I am 3 years old", "من سه ساله هستم"));
+        words.add(new Word("What is your job?", "وظیفه شما چیست؟"));
+        words.add(new Word("I am a student", "من یک شااگرد هستم"));
+        words.add(new Word("What do you like?", "شما چی دوست دارید؟"));
+        words.add(new Word("I like reading books", "من مطالعه کردن کتاب را دوست دارم"));
         List<Word> data = words;
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        Recycler_Adapter adapter = new Recycler_Adapter(data, getApplication());
+
+        RecyclerView recyclerView =  findViewById(R.id.recyclerview);
+        Recycler_Adapter_NoImage adapter = new Recycler_Adapter_NoImage(data, getApplication());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
